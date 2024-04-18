@@ -43,8 +43,6 @@ int Batsman :: calcavg(int innings, int notout, int runs){
 };
 
 
-
-
 int main(){
 
     Batsman obj;
