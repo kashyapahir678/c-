@@ -31,6 +31,5 @@ int main(){
     Area area(10),rectangle(20,30),interset(2500,2,3);
 
 
-
     return 0;
 }
