@@ -39,7 +39,7 @@ int main(){
    c.getData(6,7);
    c.setData();
    c++;
-   c.setData();
+   c.setData(); 
 
     return 0;
 }
