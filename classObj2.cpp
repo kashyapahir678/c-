@@ -5,7 +5,7 @@ using namespace std;
 
 class Batsman
 {
-
+   
 private:
     int bcode;
     char bname[20];
