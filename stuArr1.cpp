@@ -8,7 +8,7 @@ class Student{
     char name[20];
     int marks[3];
     int total=0;
-    int percentage=0;
+    int percentage=0;    
 
     public:
     void getdata(){
