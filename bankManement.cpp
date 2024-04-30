@@ -17,7 +17,7 @@ class Account{
 };
 
 void Account :: create_Account(){
-    cout << endl << "Enter the Account Number : " ;
+    cout << endl << "Enter the Account Number : ";
     cin >> actNo;
     cout << endl << "Enter the name of Account Holder Name : ";
     cin >> name;
@@ -27,7 +27,7 @@ void Account :: create_Account(){
     cin >> type;
     cout << endl << "Enter the Deposit Amount (For saving minimum Amount 500 - For current minimum Amount 1000) : ";
     cin >> balance;
-    cout << endl << "Your Account Created Successfuly!";
+    cout << endl << "Your Account Created Successfuly!" << endl;
 };
 
 void Account :: deposit_Money(){
@@ -35,7 +35,7 @@ void Account :: deposit_Money(){
     cout << endl << "Enter Amount you want to Deposit : ";
     cin >> d;
     balance+=d;
-    cout << endl << "Available Balance : " << balance;
+    cout << endl << "Available Balance : " << balance << endl;
 };
 
 void Account :: display_account(){
@@ -47,7 +47,7 @@ void Account :: display_account(){
     }else{
         cout << "Savings Account";
     }
-    cout << endl << "Balance - " << balance; 
+    cout << endl << "Balance - " << balance << endl; 
     
 };
 
@@ -56,10 +56,10 @@ void Account :: withdraw_money(){
     cout << endl << "Enter your Amount for Withdraw : ";
     cin >> w;
     balance=balance-w;
-    if(balance<w){
-        cout << endl << "Insufficient Balance! : ";
-    }
-    cout << endl << "Available Balance : " << balance;
+    // if(balance<w){
+    //     cout << endl << "Insufficient Balance! : ";
+    // }
+    cout << endl << "Available Balance : " << balance << endl;
 
 };
 
@@ -70,16 +70,14 @@ int main(){
 
     do
     {
-       cout << "========================";
-       cout << endl << "Main Menu ";
+       cout << endl << "============ Main Menu ============" << endl;
        cout << endl << "1. New Account ";
        cout << endl << "2. Deposit Amount ";
        cout << endl << "3. Withdraw Amount ";
        cout << endl << "4. Display Inquiry ";
        cout << endl << "5. All Account Holder List ";
        cout << endl << "6. Close An Account ";
-       cout << endl << "7. Modify An Account ";
-       cout << endl << "8. Exit ";
+       cout << endl << "7. Exit ";
        cout << endl << "========================" << endl;
 
        cout << "Select Your Option :- "<< endl;
@@ -105,10 +103,21 @@ int main(){
          "4. Display Inquiry \n";
          obj.display_account();
          break;
+
+         case '5':
+         "5. Display Inquiry \n";
+         break;
+
+         case '6':
+         "6. Display Inquiry \n";
+         break;
+
+         case '7':
+         break;
        }
 
 
-    } while (ch==8);
+    } while (ch!=7);
     return 0;
     
 
