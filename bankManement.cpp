@@ -2,124 +2,133 @@
 
 using namespace std;
 
-class Account{
-    int actNo;
-    char name[50];
-    char address[50];
-    int balance;
-    char type;
+class Account
+{
+    int actNo = 56564;
+    int balance = 45000;
+    string name = "kashyap Ahir";
+    string address = "surat";
+    char type = 'c';
 
-    public:
-    void create_Account();
+public:
     void deposit_Money();
     void display_account();
     void withdraw_money();
 };
 
-void Account :: create_Account(){
-    cout << endl << "Enter the Account Number : ";
-    cin >> actNo;
-    cout << endl << "Enter the name of Account Holder Name : ";
-    cin >> name;
-    cout << endl << "Enter your Address : ";
-    cin >> address;
-    cout << endl << "Enter the type of the Account (c/s) : ";
-    cin >> type;
-    cout << endl << "Enter the Deposit Amount (For saving minimum Amount 500 - For current minimum Amount 1000) : ";
-    cin >> balance;
-    cout << endl << "Your Account Created Successfuly!" << endl;
-};
-
-void Account :: deposit_Money(){
+void Account ::deposit_Money()
+{
     int d;
-    cout << endl << "Enter Amount you want to Deposit : ";
+    cout << endl
+         << "Enter Amount you want to Deposit : ";
     cin >> d;
-    balance+=d;
-    cout << endl << "Available Balance : " << balance << endl;
+    balance += d;
+    cout << endl
+         << "Available Balance : " << balance << endl;
 };
 
-void Account :: display_account(){
-    cout << endl << "Name - " << name;
-    cout << endl << "Address - " << address;
-    cout << endl << "Type - ";
-    if(type=='c'){
+void Account ::display_account()
+{
+    cout << endl
+         << "Name - " << name;
+    cout << endl
+         << "Address - " << address;
+    cout << endl
+         << "Type - ";
+    if (type == 'c')
+    {
         cout << "Current Account ";
-    }else{
+    }
+    else
+    {
         cout << "Savings Account";
     }
-    cout << endl << "Balance - " << balance << endl; 
-    
+    cout << endl
+         << "Balance - " << balance << endl;
 };
 
-void Account :: withdraw_money(){
+void Account ::withdraw_money()
+{
     int w;
-    cout << endl << "Enter your Amount for Withdraw : ";
+    cout << endl
+         << "Enter your Amount for Withdraw : ";
     cin >> w;
-    balance=balance-w;
-    // if(balance<w){
-    //     cout << endl << "Insufficient Balance! : ";
-    // }
-    cout << endl << "Available Balance : " << balance << endl;
+    if (balance <= w)
+    {
+        cout << "Insufficient Balance!";
+    }
+    else
+    {
+        balance = balance - w;
+        cout << endl
+             << "Available Balance : " << balance << endl;
+    };
+}
 
-};
+int main()
+{
 
-int main(){
-    
     char ch;
+    int pin;
     Account obj;
 
-    do
+pin:
+    cout << "Enter the Account PIN - " << endl;
+    cin >> pin;
+    if (pin != 1234)
     {
-       cout << endl << "============ Main Menu ============" << endl;
-       cout << endl << "1. New Account ";
-       cout << endl << "2. Deposit Amount ";
-       cout << endl << "3. Withdraw Amount ";
-       cout << endl << "4. Display Inquiry ";
-       cout << endl << "5. All Account Holder List ";
-       cout << endl << "6. Close An Account ";
-       cout << endl << "7. Exit ";
-       cout << endl << "========================" << endl;
+        cout << "incorrect PIN !" << endl;
+        goto pin;
+    }
+    else
+    {
+        do
+        {
+            cout << endl
+                 << "============ Main Menu ============" << endl;
+            cout << endl
+                 << "1. Deposit Amount ";
+            cout << endl
+                 << "2. Withdraw Amount ";
+            cout << endl
+                 << "3. Display Inquiry ";
+            cout << endl
+                 << "4. Exit ";
+            cout << endl
+                 << "========================" << endl;
 
-       cout << "Select Your Option :- "<< endl;
-       cin >> ch;
+            cout << "Select Your Option :- " << endl;
+            cin >> ch;
 
-       switch(ch){
-         case '1':
-         "1. New Account \n";
-         obj.create_Account();
-         break;
+            switch (ch)
+            {
 
-         case '2':
-         "2. Deposit Amount \n";
-         obj.deposit_Money();
-         break;
+            case '1':
+                "1. Deposit Amount \n";
+                obj.deposit_Money();
+                break;
 
-         case '3':
-         "3. Withdraw Amount \n";
-         obj.withdraw_money();
-         break;
+            case '2':
+                "2. Withdraw Amount \n";
+                obj.withdraw_money();
+                break;
 
-         case '4':
-         "4. Display Inquiry \n";
-         obj.display_account();
-         break;
+            case '3':
+                "3. Display Inquiry \n";
+                obj.display_account();
+                break;
 
-         case '5':
-         "5. Display Inquiry \n";
-         break;
+            case '4':
+                goto end;
+                break;
+            }
 
-         case '6':
-         "6. Display Inquiry \n";
-         break;
+        } while (ch != 4);
 
-         case '7':
-         break;
-       }
-
-
-    } while (ch!=7);
-    return 0;
-    
+    end:
+        cout << endl
+             << "Thank you for using cart";
+    }
 
     return 0;
 }
