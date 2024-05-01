@@ -5,27 +5,31 @@ using namespace std;
 class Restrorunt{
 
     public:
+    int qty;
+    int sum;
+    int total=0;
 
 
-    void burger();
+    void menu();
 
 };
 
 
-void Restrorunt :: burger(){
+void Restrorunt :: menu(){
 
 
-    int bur;
+    char bur;
     int BurgerTotal=0;
 
-   cout << endl << "=======================Burger======================";
+    next:
+
+   cout << endl << "=======================Menu======================";
     cout << endl << "___________________________________________________";
-    cout << endl << "|  1. Zinger Burger                         Rs:299 |";
-    cout << endl << "|  2. Tower Burger                          Rs:380 |";
-    cout << endl << "|  3. Aalu Tikki Burger                     Rs:180 |";
-    cout << endl << "|  4. Cheese Burger                         Rs:399 |";
-    cout << endl << "|  5. Combo Burger                          Rs:299 |";
-    cout << endl << "|  6. Go Back To The Main Menu                     |"; 
+    cout << endl << "|  1.  Pizza                                Rs:240 |";
+    cout << endl << "|  2.  Burger                               Rs:160 |";
+    cout << endl << "|  3.  Green Sandwich                       Rs:120 |";
+    cout << endl << "|  4.  cold                                  Rs:30 |";
+    cout << endl << "|  5. Go Back To The Main Menu                     |"; 
     cout << endl << "|__________________________________________________|" << endl;
     
     cout << "Please select any option :- ";
@@ -34,15 +38,56 @@ void Restrorunt :: burger(){
     switch (bur){
        case '1':
                //Zinger burger
-               int qty=0;
-               int ztotal=0;
 
                cout<< endl <<"How much quantity do you want? ";
                cin >> qty;
 
-               ztotal=299*qty;
+               sum=240*qty;
+
+               cout << endl << "Total :-" << sum;
+               goto next;
 
        break;
+
+       case '2':
+               //Tower Burger
+
+               cout << endl << "How much quantity do you want? ";
+               cin >> qty;
+
+               sum=160*qty;
+
+               cout << endl << "Total :-" << sum;
+               goto next;
+        break;
+
+        case '3':
+               //Cheese Burger
+
+               cout << endl << "How much quantity do you want? ";
+               cin >> qty;
+
+               sum=120*qty;
+
+               cout << endl << "Total :-" << sum;
+               goto next;
+        break;
+
+        case '4':
+               //Combo Burger
+
+               cout << endl << "How much quantity do you want? ";
+               cin >> qty;
+
+               sum=30*qty;
+
+               cout << endl << "Total :-" << sum;
+               goto next;
+        break;
+
+        case '5':
+               //Go back to main menu
+        break;
     }
     
 
@@ -54,16 +99,16 @@ int main(){
     Restrorunt obj;
     char option;
 
+
+    
+
   do{
 
-   cout << endl << "===========================Menu============================" << endl;
-   cout << endl << "1. Burger ";
-   cout << endl << "2. Pizza ";
-   cout << endl << "3. Sandwich ";
-   cout << endl << "4. Biryani ";
-   cout << endl << "5. Paratha Rolls ";
-   cout << endl << "6. Coke ";
-   cout << endl << "7. Exit ";
+   cout << endl << "===========================Resto============================" << endl;
+   cout << endl << "1. For Menu ";
+   cout << endl << "2. For Order ";
+   cout << endl << "3. For Bill ";
+   cout << endl << "4. Exit ";
    cout << endl << "============================================================" << endl;
 
    cout << "Please select any option :- ";
@@ -72,32 +117,19 @@ int main(){
    switch (option){
 
             case '1':
-                "1. Burger \n";
-                obj.burger();
+                "1. For Menu \n";
+                obj.menu();
                 break;
 
             case '2':
-                "2. Pizza \n";
+                "2. For Order \n";
                 break;
 
             case '3':
-                "3. Sandwich \n";
+                "3. For Bill \n";
                 break;
 
             case '4':
-                "4. Biryani \n";
-                break;
-
-            case '5':
-                "5. Paratha Rolls \n";
-                break;
-            
-            case '6':
-                "6. Coke \n";
-                break;
-            
-
-            case '7':
                 goto end;
                 break;
 
