@@ -51,7 +51,9 @@ void Restrorunt :: order(){
                for(int i=0; i<1; i++){
                    cout<< endl <<"enter pizza quantity do you want? ";
                    cin >> qty[i];
-                   
+                   if(qty[i]>=20){
+                     cout << "out if stock!" << endl;
+                   }
                }
 
 
@@ -120,7 +122,7 @@ void Restrorunt :: bill(){
         GST=Total*18/100;
         SubTotal=Total+GST;
          
-         if(qty[i]<=20){
+         if(qty[i]<20){
              cout << "pizza" << "\t\t\t" << qty[i] << "\t\t\t"<< arr[0] << "\t\t\t"<<sum1<<endl;
          }
          if(qty2[i]>=1){
@@ -191,7 +193,7 @@ int main(){
    } 
    while(option!=7);
 
-   end: cout << endl << "\t Thank you for Visiting \t";
+   end: cout << endl << "\t \t Thank you for Visiting \t";
 
     return 0;
 }
