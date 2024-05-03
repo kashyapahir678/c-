@@ -14,6 +14,7 @@ public:
     void deposit_Money();
     void display_account();
     void withdraw_money();
+    void Loan();
 };
 
 void Account ::deposit_Money()
@@ -65,6 +66,24 @@ void Account ::withdraw_money()
     };
 }
 
+void Account :: Loan(){
+
+    double loan_amount,number_of_years,total_amount,monthly_amount;
+    int loan_interst=2;
+    cout << "Enter the loan amaount : " << endl;
+    cin >> loan_amount;
+
+    cout << "number of years : " << endl;
+    cin >> number_of_years;
+
+    total_amount=(number_of_years*loan_amount)+(number_of_years*loan_amount*(loan_interst/100.00));
+    monthly_amount=total_amount/(number_of_years*12);
+
+    cout << "Total Amount to be paid : " << total_amount << endl;
+    cout << "Total Interst : " << total_amount-(number_of_years*loan_amount)<< endl;
+    cout << "Monthly Amount to be paid : " << monthly_amount << endl;
+};
+
 int main()
 {
 
@@ -93,7 +112,9 @@ pin:
             cout << endl
                  << "3. Display Inquiry ";
             cout << endl
-                 << "4. Exit ";
+                 << "4. Loan ";
+            cout << endl
+                 << "5. Exit ";
             cout << endl
                  << "========================" << endl;
 
@@ -119,6 +140,11 @@ pin:
                 break;
 
             case '4':
+                "4. Loan \n";
+                obj.Loan();
+                break;
+
+            case '5':
                 goto end;
                 break;
             }

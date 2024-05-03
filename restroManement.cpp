@@ -5,10 +5,13 @@ using namespace std;
 class Restrorunt{
 
     public:
+    //price
     int arr[5]={240,160,120,30,400};
     char item;
+    //quntity
     int qty[1]; int qty2[1]; int qty3[1]; int qty4[1]; int qty5[1];
     int q;
+    //amount
     int sum1=0; int sum2=0; int sum3=0; int sum4=0; int sum5=0;
     int Total=0;
     int GST;

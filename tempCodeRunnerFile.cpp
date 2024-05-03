@@ -1,3 +1,2 @@
 
-    Base obj_poiner;
-    derive obj;
+    cout << "Enter the Account PIN - " << endl;
